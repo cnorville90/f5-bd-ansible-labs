@@ -12,10 +12,10 @@
           user: "{{ ansible_user }}"
           password: "{{ ansible_ssh_pass }}"
           server_port: "{{ server_port }}"
-          no_f5_teem: yes
+          no_f5_teem: true
           validate_certs: false
         name: "vip"
-        destination: "{{ private_ip }}"
+        destination: "{{ ansible_host }}"
         port: "443"
         enabled_vlans: "all"
         all_profiles: ['http', 'clientssl', 'oneconnect']
